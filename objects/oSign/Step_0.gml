@@ -5,6 +5,8 @@ if(place_meeting(x,y,oPlayer)){
 			myTextBox.text = "Pressione as teclas A e D para se mover!"	
 		}else if(indice == 1){
 			myTextBox.text = "Pressione ESPAÇO para saltar até 3 blocos!"	
+		}else if(indice == 2){
+			myTextBox.text = "Cuidado com espinhos, eles te eliminam na hora!"
 		}
 	}
 }else{

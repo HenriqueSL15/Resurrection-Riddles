@@ -1,6 +1,11 @@
 image_xscale = 0.3
 image_yscale = 0.3
 
+timer = false
+i = 0
+
+alive = true
+
 spd = 7
 hspd = 0
 vspd = 0

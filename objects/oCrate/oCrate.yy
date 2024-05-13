@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"oCrate",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oCrate",
   "overriddenProperties":[],
@@ -9,7 +12,10 @@
     "name":"Objects",
     "path":"folders/Objetos/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oWall",
+    "path":"objects/oWall/oWall.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -21,7 +27,12 @@
   "physicsRestitution":0.1,
   "physicsSensor":false,
   "physicsShape":1,
-  "physicsShapePoints":[],
+  "physicsShapePoints":[
+    {"x":0.0,"y":0.0,},
+    {"x":106.0,"y":0.0,},
+    {"x":106.0,"y":106.0,},
+    {"x":0.0,"y":106.0,},
+  ],
   "physicsStartAwake":true,
   "properties":[],
   "resourceType":"GMObject",
