@@ -12,3 +12,7 @@ vspd = 0
 grv = 0.5
 
 jump = false
+
+falling = false
+
+heartsObtained = 0

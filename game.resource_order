@@ -20,8 +20,10 @@
     {"name":"Ground","order":2,"path":"folders/Sprites/Ground.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"oHeart","order":10,"path":"objects/oHeart/oHeart.yy",},
     {"name":"oBush1","order":1,"path":"objects/oBush1/oBush1.yy",},
     {"name":"oBush2","order":2,"path":"objects/oBush2/oBush2.yy",},
+    {"name":"oCamera","order":15,"path":"objects/oCamera/oCamera.yy",},
     {"name":"oCrate","order":3,"path":"objects/oCrate/oCrate.yy",},
     {"name":"oDeadBush","order":4,"path":"objects/oDeadBush/oDeadBush.yy",},
     {"name":"oPlayerBody","order":14,"path":"objects/oPlayerBody/oPlayerBody.yy",},
@@ -38,6 +40,7 @@
     {"name":"sBush2","order":1,"path":"sprites/sBush2/sBush2.yy",},
     {"name":"sCrate","order":3,"path":"sprites/sCrate/sCrate.yy",},
     {"name":"sDeadBush","order":4,"path":"sprites/sDeadBush/sDeadBush.yy",},
+    {"name":"sHeart","order":6,"path":"sprites/sHeart/sHeart.yy",},
     {"name":"sPlayerDead","order":4,"path":"sprites/sPlayerDead/sPlayerDead.yy",},
     {"name":"sPlayerFalling","order":3,"path":"sprites/sPlayerFalling/sPlayerFalling.yy",},
     {"name":"sPlayerJumpingStart","order":2,"path":"sprites/sPlayerJumpingStart/sPlayerJumpingStart.yy",},

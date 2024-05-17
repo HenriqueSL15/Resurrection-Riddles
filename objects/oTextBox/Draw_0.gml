@@ -1,4 +1,5 @@
-draw_sprite(sTextBox,0, x, y)
+draw_sprite(sTextBox,0, camera_get_view_x(view_camera[0]) + 450,100)
 draw_set_font(fFont)
 draw_set_color(c_black)
-draw_text_ext(x + margin, y + margin, text, stringHeight, boxWidth - margin)
+draw_text_ext(camera_get_view_x(view_camera[0]) + 475,camera_get_view_y(view_camera[0]) + margin, text, stringHeight, boxWidth - margin)
+show_debug_message(camera_get_view_x(view_camera[0]))

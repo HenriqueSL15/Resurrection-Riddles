@@ -61,13 +61,17 @@ if (place_meeting(x,y+1,oWall) and key_jump){
 }
 
 if(!place_meeting(x,y+1,oWall)){
+	falling = true
 	if(vspd > -5.5){
 		sprite_index = sPlayerFalling
 	}else{
 		sprite_index = sPlayerJumpingStart	
 	}
+}else{
+	falling = false	
 }
 }else{
+	falling = false
 	hspd = move * spd
 	vspd = moveY * spd
 }
