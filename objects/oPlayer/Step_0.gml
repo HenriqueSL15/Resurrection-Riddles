@@ -55,6 +55,11 @@ hspd = move * spd
 
 vspd = vspd + grv
 
+if(pressFExists){
+	layer_sequence_destroy(pressF)
+	pressFExists = false
+}
+
 //Pulo
 if (place_meeting(x,y+1,oWall) and key_jump){
 	vspd -= 15	
@@ -74,6 +79,11 @@ if(!place_meeting(x,y+1,oWall)){
 	falling = false
 	hspd = move * spd
 	vspd = moveY * spd
+	
+	if(!pressFExists){
+		pressF = layer_sequence_create("Sequences",x,y - 250,seqPressKeyF)
+		pressFExists = true
+	}
 }
 
 if(timer){

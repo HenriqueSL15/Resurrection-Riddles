@@ -11,6 +11,8 @@ if(place_meeting(x,y,oPlayer)){
 			myTextBox.text = "Você pode não conseguir fazer certos pulos, então precisará usar objetos como caixas para conseguir. Para se transformar na sua alma, se elimine nos espinhos.(Para voltar desse modo, aperte 'F' perto do corpo)"
 		}else if(indice == 4){
 			myTextBox.text = "Enquanto estiver como alma, você pode voar para qualquer direção."
+		}else if(indice == 5){
+			myTextBox.text = "Você também pode usar alavancas para abrir certas portas(ou fechar outras)"
 		}
 	}
 }else{

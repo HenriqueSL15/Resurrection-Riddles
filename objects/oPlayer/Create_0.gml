@@ -3,6 +3,9 @@ image_yscale = 0.3
 
 timer = false
 i = 0
+j = 0
+
+pressFExists = false
 
 alive = true
 
