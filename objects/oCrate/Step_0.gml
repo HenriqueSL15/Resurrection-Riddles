@@ -1,7 +1,7 @@
 vspd = vspd + grv
 
-if(place_meeting(x, y + vspd,oWall)){
-	while(!place_meeting(x,y+sign(vspd),oWall)){
+if(place_meeting(x, y + vspd,oCollisionBox)){
+	while(!place_meeting(x,y+sign(vspd),oCollisionBox)){
 		y += sign(vspd)	
 	}
 	vspd = 0

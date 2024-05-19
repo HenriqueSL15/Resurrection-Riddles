@@ -30,8 +30,8 @@ if(hspd != 0){
 }
 
 //Colisão Horizontal
-if(place_meeting(x + hspd, y,oWall)){
-	while(!place_meeting(x+sign(hspd),y,oWall)){
+if(place_meeting(x + hspd, y,oCollisionBox)){
+	while(!place_meeting(x+sign(hspd),y,oCollisionBox)){
 		x += sign(hspd)	
 	}
 	hspd = 0
@@ -40,8 +40,8 @@ if(place_meeting(x + hspd, y,oWall)){
 x = x + hspd
 
 //Colisão Vertical
-if(place_meeting(x, y + vspd,oWall)){
-	while(!place_meeting(x,y+sign(vspd),oWall)){
+if(place_meeting(x, y + vspd,oCollisionBox)){
+	while(!place_meeting(x,y+sign(vspd),oCollisionBox)){
 		y += sign(vspd)	
 	}
 	vspd = 0
@@ -61,11 +61,11 @@ if(pressFExists){
 }
 
 //Pulo
-if (place_meeting(x,y+1,oWall) and key_jump){
+if (place_meeting(x,y+1,oCollisionBox) and key_jump){
 	vspd -= 15	
 }
 
-if(!place_meeting(x,y+1,oWall)){
+if(!place_meeting(x,y+1,oCollisionBox)){
 	falling = true
 	if(vspd > -5.5){
 		sprite_index = sPlayerFalling

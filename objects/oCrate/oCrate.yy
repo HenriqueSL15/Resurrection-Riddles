@@ -13,8 +13,8 @@
     "path":"folders/Objetos/Objects.yy",
   },
   "parentObjectId":{
-    "name":"oWall",
-    "path":"objects/oWall/oWall.yy",
+    "name":"oCollisionBox",
+    "path":"objects/oCollisionBox/oCollisionBox.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
