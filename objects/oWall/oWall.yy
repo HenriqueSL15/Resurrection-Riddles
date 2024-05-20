@@ -13,8 +13,8 @@
     "path":"folders/Objetos/Puzzle Pieces.yy",
   },
   "parentObjectId":{
-    "name":"oCollisionBox",
-    "path":"objects/oCollisionBox/oCollisionBox.yy",
+    "name":"oCollisionComponents",
+    "path":"objects/oCollisionComponents/oCollisionComponents.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,7 +34,7 @@
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":false,
+  "solid":true,
   "spriteId":{
     "name":"sNormalWall",
     "path":"sprites/sNormalWall/sNormalWall.yy",

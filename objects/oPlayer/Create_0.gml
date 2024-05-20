@@ -12,7 +12,7 @@ alive = true
 spd = 7
 hspd = 0
 vspd = 0
-grv = 0.5
+grv = 0.27
 
 jump = false
 

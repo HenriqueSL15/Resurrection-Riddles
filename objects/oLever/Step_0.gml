@@ -14,8 +14,19 @@ if(state){
 		with (oWall){
 			if(port == 0){
 				if(y < prevY){
-					show_debug_message("falso")
-					y += 6
+					vspd = vspd + grav
+
+					if(place_meeting(x, y + vspd,oCollisionComponents)){
+						while(!place_meeting(x,y+sign(vspd),oCollisionComponents)){
+							y += sign(vspd)	
+						}
+						vspd = 0
+					}
+
+					y = y + vspd
+
+				}else{
+					vspd = 0	
 				}
 			}
 		}

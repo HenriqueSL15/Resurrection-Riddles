@@ -29,9 +29,26 @@ if(hspd != 0){
 	sprite_index = sPlayer	
 }
 
+// Moving platform collision
+var _movingPlatform = instance_place(x, y + max(1, vspd), oMovingPlatform);
+show_debug_message(place_meeting(x,y+1,oMovingPlatform))
+if (_movingPlatform != -4) {
+	// Pixel-perfect collisions
+	if (vspd > 0) {
+		while (!place_meeting(x, y + sign(vspd), oMovingPlatform)) {
+			y += sign(vspd);
+		}
+		vspd = 0; // So the gravity is reset too
+	}
+	
+	// Add velocity
+	hspd += _movingPlatform.moveX;
+	vspd += _movingPlatform.moveY;
+}
+
 //Colisão Horizontal
-if(place_meeting(x + hspd, y,oCollisionBox)){
-	while(!place_meeting(x+sign(hspd),y,oCollisionBox)){
+if(place_meeting(x + hspd, y,[oCollisionBox,oCollisionComponents])){
+	while(!place_meeting(x+sign(hspd),y,[oCollisionBox,oCollisionComponents])){
 		x += sign(hspd)	
 	}
 	hspd = 0
@@ -40,8 +57,8 @@ if(place_meeting(x + hspd, y,oCollisionBox)){
 x = x + hspd
 
 //Colisão Vertical
-if(place_meeting(x, y + vspd,oCollisionBox)){
-	while(!place_meeting(x,y+sign(vspd),oCollisionBox)){
+if(place_meeting(x, y + vspd,[oCollisionBox,oCollisionComponents])){
+	while(!place_meeting(x,y+sign(vspd),[oCollisionBox,oCollisionComponents])){
 		y += sign(vspd)	
 	}
 	vspd = 0
@@ -61,11 +78,12 @@ if(pressFExists){
 }
 
 //Pulo
-if (place_meeting(x,y+1,oCollisionBox) and key_jump){
+if (place_meeting(x,y+1,[oCollisionBox, oCollisionComponents]) && key_jump){
 	vspd -= 15	
 }
 
-if(!place_meeting(x,y+1,oCollisionBox)){
+if(!place_meeting(x,y+1,[oCollisionBox, oCollisionComponents])){
+	vspd = vspd + grv
 	falling = true
 	if(vspd > -5.5){
 		sprite_index = sPlayerFalling
@@ -81,7 +99,7 @@ if(!place_meeting(x,y+1,oCollisionBox)){
 	vspd = moveY * spd
 	
 	if(!pressFExists){
-		pressF = layer_sequence_create("Sequences",x,y - 250,seqPressKeyF)
+		pressF = layer_sequence_create("Sequences",x,y - 200,seqPressKeyF)
 		pressFExists = true
 	}
 }

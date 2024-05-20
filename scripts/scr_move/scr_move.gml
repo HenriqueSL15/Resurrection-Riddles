@@ -6,19 +6,19 @@ var vspd = spdY;
 
 //move()
 /// horizotall movement
-if (place_meeting(x+hspd,y ,oCollisionBox))
+if (place_meeting(x+hspd,y ,[oCollisionBox, oCollisionComponents]))
 {
-while(!place_meeting(x+sign(hspd),y ,oCollisionBox))
+while(!place_meeting(x+sign(hspd),y ,[oCollisionBox, oCollisionComponents]))
 {
 x+=sign(hspd);
 }
 hspd=0;
 }
-if(place_meeting(x+oCrate.sprite_width,y ,oCollisionBox)&&place_meeting(x+hspd,y,oCrate))
+if(place_meeting(x+oCrate.sprite_width,y ,[oCollisionBox, oCollisionComponents])&&place_meeting(x+hspd,y,oCrate))
 {
 	hspd=0;
 }
-if(place_meeting(x-oCrate.sprite_width,y ,oCollisionBox)&&place_meeting(x+hspd,y,oCrate))
+if(place_meeting(x-oCrate.sprite_width,y ,[oCollisionBox, oCollisionComponents])&&place_meeting(x+hspd,y,oCrate))
 {
 	hspd=0;
 }

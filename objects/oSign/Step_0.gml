@@ -13,6 +13,8 @@ if(place_meeting(x,y,oPlayer)){
 			myTextBox.text = "Enquanto estiver como alma, você pode voar para qualquer direção."
 		}else if(indice == 5){
 			myTextBox.text = "Você também pode usar alavancas para abrir certas portas(ou fechar outras)"
+		}else if(indice == 6){
+			myTextBox.text = "Também existem os botões, mas tome cuidado, eles desativam depois de um tempo."
 		}
 	}
 }else{
