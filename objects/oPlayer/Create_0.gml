@@ -9,6 +9,8 @@ pressFExists = false
 
 alive = true
 
+move = 0
+
 spd = 7
 hspd = 0
 vspd = 0

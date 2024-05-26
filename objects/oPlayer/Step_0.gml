@@ -14,7 +14,7 @@ key_left = keyboard_check(ord("A"))
 
 
 #region MOVIMENTAÇÃO
-var move = key_right - key_left
+move = key_right - key_left
 var moveY = key_down - key_up
 
 //Alteração de Sprites(esquerda e direita)
