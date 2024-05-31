@@ -46,63 +46,84 @@ if (_movingPlatform != -4) {
 	vspd += _movingPlatform.moveY;
 }
 
-//Colisão Horizontal
-if(place_meeting(x + hspd, y,[oCollisionBox,oCollisionComponents])){
-	while(!place_meeting(x+sign(hspd),y,[oCollisionBox,oCollisionComponents])){
-		x += sign(hspd)	
-	}
-	hspd = 0
-}
-
-x = x + hspd
-
-//Colisão Vertical
-if(place_meeting(x, y + vspd,[oCollisionBox,oCollisionComponents])){
-	while(!place_meeting(x,y+sign(vspd),[oCollisionBox,oCollisionComponents])){
-		y += sign(vspd)	
-	}
-	vspd = 0
-}
-
-y = y + vspd
-
-
 if (alive){
-hspd = move * spd
+	//Colisão Horizontal
+	if(place_meeting(x + hspd, y,[oCollisionBox,oCollisionComponents,oCollisionBrokenBox])){
+		while(!place_meeting(x+sign(hspd),y,[oCollisionBox,oCollisionComponents,oCollisionBrokenBox])){
+			x += sign(hspd)	
+		}
+		hspd = 0
+	}
 
-vspd = vspd + grv
+	x = x + hspd
 
-if(pressFExists){
-	layer_sequence_destroy(pressF)
-	pressFExists = false
-}
+	//Colisão Vertical
+	if(place_meeting(x, y + vspd,[oCollisionBox,oCollisionComponents,oCollisionBrokenBox])){
+		while(!place_meeting(x,y+sign(vspd),[oCollisionBox,oCollisionComponents,oCollisionBrokenBox])){
+			y += sign(vspd)	
+		}
+		vspd = 0
+	}
 
-//Pulo
-if (place_meeting(x,y+1,[oCollisionBox, oCollisionComponents]) && key_jump){
-	vspd -= 15	
-}
+	y = y + vspd
+	
+	hspd = move * spd
 
-if(!place_meeting(x,y+1,[oCollisionBox, oCollisionComponents])){
 	vspd = vspd + grv
-	falling = true
-	if(vspd > -5.5){
-		sprite_index = sPlayerFalling
+
+	if(pressFExists){
+		layer_sequence_destroy(pressF)
+		pressFExists = false
+	}
+
+	//Pulo
+	if (place_meeting(x,y+1,[oCollisionBox, oCollisionComponents,oCollisionBrokenBox]) && key_jump){
+		vspd -= 15	
+	}
+
+	if(!place_meeting(x,y+1,[oCollisionBox, oCollisionComponents,oCollisionBrokenBox])){
+		vspd = vspd + grv
+		falling = true
+		if(vspd > -5.5){
+			sprite_index = sPlayerFalling
+		}else{
+			sprite_index = sPlayerJumpingStart	
+		}
 	}else{
-		sprite_index = sPlayerJumpingStart	
+		falling = false	
 	}
 }else{
-	falling = false	
-}
-}else{
+	//Colisão Horizontal
+	if(place_meeting(x + hspd, y,[oCollisionBox,oCollisionComponents])){
+		while(!place_meeting(x+sign(hspd),y,[oCollisionBox,oCollisionComponents])){
+			x += sign(hspd)	
+		}
+		hspd = 0
+	}
+
+	x = x + hspd
+
+	//Colisão Vertical
+	if(place_meeting(x, y + vspd,[oCollisionBox,oCollisionComponents])){
+		while(!place_meeting(x,y+sign(vspd),[oCollisionBox,oCollisionComponents])){
+			y += sign(vspd)	
+		}
+		vspd = 0
+	}
+
+	y = y + vspd
 	falling = false
 	hspd = move * spd
 	vspd = moveY * spd
+	
+	
 	
 	if(!pressFExists){
 		pressF = layer_sequence_create("Sequences",x,y - 200,seqPressKeyF)
 		pressFExists = true
 	}
 }
+
 
 if(timer){
 	if(i < 120){

@@ -3,9 +3,13 @@
 if(follow != noone){
 	show_debug_message(follow.move)
 	if(follow.image_xscale < 0){
-		offset = -128
+		if(offset > -128){
+			offset-=10
+		}
 	}else{
-		offset = 128
+		if(offset < 128){
+			offset+=10
+		}
 	}
 	x = lerp(x, follow.x + offset, 0.1)
 	y = lerp(y, follow.y, 0.1)

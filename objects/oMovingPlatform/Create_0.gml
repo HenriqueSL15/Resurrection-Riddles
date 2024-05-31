@@ -11,7 +11,7 @@ vspd = 0
 
 
 platformSpeed = 4
-currentSpeed = 4
+currentSpeed = 0
 moveX = 0
 moveY = 0
 
